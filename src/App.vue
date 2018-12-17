@@ -8,6 +8,7 @@
             v-progress-linear(slot="progress", color="blue", indeterminate)
             template(slot="items", slot-scope="props")
               tr
+                td {{ (props.index + 1) }}
                 td {{ props.item.nama }}
                 td {{ props.item.email }}
                 td {{ props.item.telp }}
@@ -56,10 +57,11 @@ export default {
     return {
       tableLoading: true,
       headers: [
+        { text: 'Nomor', value: '[.key]' },
         { text: 'Nama', value: 'nama' },
         { text: 'Alamat Email', value: 'email' },
         { text: 'Nomor Telepon', value: 'telp' },
-        { text: 'Action', value: 'nama' }
+        { text: 'Action', value: 'tanggal' }
       ]
     }
   },
